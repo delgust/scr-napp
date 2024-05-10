@@ -28,9 +28,8 @@ sudo systemctl restart docker
 #Install Kubernetes Packages
 curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-a>
 sudo touch /etc/apt/sources.list.d/kubernetes.list
-sudo echo 'deb http://apt.kubernetes.io/  kubernetes-xenial  main' | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
 sudo apt-get update
-sudo apt-get install -y kubeadm=1.28.9-00 kubelet=1.28.9-00 kubectl=1.28.9-00
+sudo apt-get install -y kubeadm=1.28.1-1.1 kubelet=1.28.1-1.1 kubectl=1.28.1-1.1
 sudo apt-mark hold kubelet kubeadm kubectl
 
 #For the NFS Provisioner we need to install the NfS Client on all Kubernetes Mashines
