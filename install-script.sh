@@ -18,7 +18,7 @@ export nfsfolder=nfs
 export nfssubfolder=k8s
 
 #K8S Information
-export k8sversion=1.24.16-00
+export k8sversion=1.24.17
 export podnet=172.25.0.0/16
 export pathdevmap=/dev/mapper/ubuntu--vg-ubuntu--lv
 export kubeadmfolder=~/kubeadm
