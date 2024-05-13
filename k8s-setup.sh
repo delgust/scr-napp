@@ -9,6 +9,14 @@ sudo apt-get update
 sudo apt-get upgrade -y
 
 #Install Docker and change the croupdriver to systemd
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+sudo mkdir -p /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor --yes -o /etc/apt/keyrings/docker.gpg
+sudo apt update && sudo apt upgrade
 sudo apt-get install -y docker.io
 sudo systemctl enable docker.service
 sudo systemctl start docker
