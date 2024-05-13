@@ -6,9 +6,9 @@
 export installfiles=~/nappinstall
 
 #Hostnames (Server FQDN)
-export k8sm=k8smaster.lab.local
-export k8sn=k8snode.lab.local
-export nfs=nfs-k8s.lab.local
+export k8sm=napp-cp-k8s.lab.local
+export k8sn=napp-md-01-k8s.lab.local
+export nfs=napp-nfs-k8s.lab.local
 
 #NFS Information
 #Disk to use
@@ -25,7 +25,7 @@ export kubeadmfolder=~/kubeadm
 export k8sconfigfiles=~/k8sconfigfiles
 
 #LB IP Pool
-export ippool=172.0.100.100-172.0.100.130
+export ippool=10.0.13.50.100-10.0.13.70
 
 #NSX Manager Information
 export nsxmanager=10.0.10.11
@@ -83,7 +83,7 @@ curl -o $installfiles/k8smaster-setup.sh https://raw.githubusercontent.com/derst
 sed -i -e 's\$kubeadmfolder\'$kubeadmfolder'\g' $installfiles/k8smaster-setup.sh
 export k8sversionshort=${k8sversion::-3}
 sed -i -e 's\$k8sversionshort\'$k8sversionshort'\g' $installfiles/k8smaster-setup.sh
-sed -i -e 's\$k8smaster\'$k8sm'\g' $installfiles/k8smaster-setup.sh
+sed -i -e 's\$napp-cp-k8s\'$k8sm'\g' $installfiles/k8smaster-setup.sh
 sed -i -e 's\$podnet\'$podnet'\g' $installfiles/k8smaster-setup.sh
 
 #upload script to K8Smaster
@@ -99,7 +99,7 @@ cat $installfiles/kubeadm-node.sh | ssh $k8sn sudo -i
 # Install Kubectl on Management Host
 curl -o $installfiles/cli-setup.sh https://raw.githubusercontent.com/delgust/scr-napp/main/cli-setup.sh
 sed -i -e 's\$k8sversion\'$k8sversion'\g' $installfiles/cli-setup.sh
-sed -i -e 's\$k8smaster\'$k8sm'\g' $installfiles/cli-setup.sh
+sed -i -e 's\$napp-cp-k8s\'$k8sm'\g' $installfiles/cli-setup.sh
 bash $installfiles/cli-setup.sh
 
 #Setup Loadbalancer MetalB
