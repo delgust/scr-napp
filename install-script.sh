@@ -25,12 +25,12 @@ export kubeadmfolder=~/kubeadm
 export k8sconfigfiles=~/k8sconfigfiles
 
 #LB IP Pool
-export ippool=10.0.13.50.100-10.0.13.70
+export ippool=10.0.13.50.100-10.0.13.60
 
 #NSX Manager Information
 export nsxmanager=10.0.10.11
 export nsxuser=admin
-export nsxpasswd='P@ssw0rd.123@'
+export nsxpasswd='P@ssw0rd.123@@'
 export dockerregistry='projects.registry.vmware.com/nsx_application_platform/clustering'
 export helmrepo='oci://projects.registry.vmware.com/nsx_application_platform/helm-charts'
 
