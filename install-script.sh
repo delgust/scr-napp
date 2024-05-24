@@ -103,7 +103,7 @@ sed -i -e 's\$napp-cp-k8s\'$k8sm'\g' $installfiles/cli-setup.sh
 bash $installfiles/cli-setup.sh
 
 #Setup Loadbalancer MetalB
-curl -o $installfiles/k8sprep.sh https://raw.githubusercontent.com/derstich/nsx-napp/main/k8sprep.sh
+curl -o $installfiles/k8sprep.sh https://raw.githubusercontent.com/delgust/scr-napp/main/k8sprep.sh
 mkdir $k8sconfigfiles
 sed -i -e 's\$k8sconfigfiles\'$k8sconfigfiles'\g' $installfiles/k8sprep.sh
 sed -i -e 's\$ippool\'$ippool'\g' $installfiles/k8sprep.sh
