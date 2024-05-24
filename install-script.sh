@@ -110,7 +110,7 @@ sed -i -e 's\$ippool\'$ippool'\g' $installfiles/k8sprep.sh
 bash $installfiles/k8sprep.sh
 
 #Download Images upfront to worker node
-curl -o $installfiles/imagepull.sh https://raw.githubusercontent.com/derstich/nsx-napp/main/imagepull.sh
+curl -o $installfiles/imagepull.sh https://raw.githubusercontent.com/delgust/scr-napp/main/imagepull.sh
 scp $installfiles/imagepull.sh $k8sn:$installfiles/
 ssh $k8sn bash $installfiles/imagepull.sh
 
