@@ -77,7 +77,7 @@ done
 
 #Additional setup on Kubernetes Master
 #Download k8smaster-setup script
-curl -o $installfiles/k8smaster-setup.sh https://raw.githubusercontent.com/derstich/nsx-napp/main/k8smaster-setup.sh
+curl -o $installfiles/k8smaster-setup.sh https://raw.githubusercontent.com/delgust/scr-napp/main/k8smaster-setup.sh
 
 #modify the settings
 sed -i -e 's\$kubeadmfolder\'$kubeadmfolder'\g' $installfiles/k8smaster-setup.sh
