@@ -49,7 +49,7 @@ done
 
 #NFS Configuration
 #Download the nfs-setup script
-curl -o $installfiles/nfs-setup.sh https://raw.githubusercontent.com/derstich/nsx-napp/main/nfs-setup.sh
+curl -o $installfiles/nfs-setup.sh https://raw.githubusercontent.com/delgust/scr-napp/main/nfs-setup.sh
 
 #modify the settings
 sed -i -e 's\$sdx\'$sdx'\g' $installfiles/nfs-setup.sh
